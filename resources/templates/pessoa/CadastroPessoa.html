@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+	<title>Cadastro de Pessoa</title>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/css/bootstrap.css}"/>
+</head>
+
+<body>
+<section>
+
+	<div class="container">
+			<div>
+				<h2> Cadastro de Pessoa </h2>
+			</div>
+		
+		<th:block th:include="fragments/MensagemSucesso"></th:block>
+
+		<form method="POST" th:object="${pessoa}" class="form-vertical  js-form-loading">
+			<th:block th:include="fragments/MensagensErroValidacao"></th:block>
+			
+				<div class="form-group">
+					<label for="id_pessoas">ID</label>
+					<input id="id_pessoas" type="text" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="nome">Nome Completo</label>
+					<input id="nome" type="text" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="setor">Setor/Departamento</label>
+					<input id="setor" type="text" class="form-control"/>
+				</div>
+				<div class="bw-field-action">
+					<div class="form-group">
+						<label for="empresa">Empresa</label>
+						<select id="empresa" class="form-control">
+								<option value="">Selecione a empresa</option>
+						</select>
+						<div class="bw-field-action__icon">
+							<a href="#" data-toggle="modal" data-target="#modalCadastroEmpresa">
+								<i class="glyphicon  glyphicon-plus-sign  bw-glyphicon-large"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="telefone">Telefone</label>
+					<input id="telefone" type="text" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="celular">Celular</label>
+					<input id="celular" type="text" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<label for="email">E-mail</label>
+					<input id="email" type="email" class="form-control"/>
+				</div>
+				
+				
+			<div class="form-group">
+				<button class="btn  btn-primary" type="submit">Salvar</button>
+			</div>
+	
+		</form>
+	</div>
+	
+	<!-- <div th:replace="estilo/CadastroRapidoEstilo :: modal"></div> -->
+	
+</section>
+	
+</body>
+</html>

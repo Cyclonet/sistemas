@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+	<title>Cadastro de Empresa</title>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/css/bootstrap.css}"/>
+</head>
+
+<body>
+<section>
+
+	<div class="container">
+		
+		<div class="page-header">
+			<div>
+				<h2>
+					Cadastro de Empresa
+				</h2>
+			</div>
+		</div>
+		
+		<th:block th:include="fragments/MensagemSucesso"></th:block>
+
+		<form method="POST" th:object="${empresa}" class="form-vertical  js-form-loading">
+			<th:block th:include="fragments/MensagensErroValidacao"></th:block>
+	
+			
+			
+			<div class="my-4">
+				
+				<div class="row">
+					<div class="col-sm-1  form-group">
+						<label for="id">ID</label>
+						<input id="id" type="text" class="form-control" th:field="*{id}"/>
+					</div>
+				</div>
+				
+				<div class="row">	
+					<div class="col-sm-2 form-group">
+						<label for="cnpj">CNPJ</label>
+						<input id="cnpj" type="text" class="form-control" th:field="*{cnpj}"/>
+					</div>
+					<div class="col-sm-5  form-group">
+						<label for="razaoSocial">Razão Social</label>
+						<input id="razaoSocial" type="text" class="form-control" th:field="*{razaoSocial}"/>
+					</div>
+					<div class="col-sm-5  form-group">
+						<label for="nome">Nome Fantasia</label>
+						<input id="nome" type="text" class="form-control" th:field="*{nome}"/>
+					</div>
+				</div>
+			</div>
+			
+			<div class="my-4">
+				<div class="row">	
+					<div class="col-sm-6 form-group">
+						<label for="cep">CEP</label>
+						<input id="cep" type="text" class="form-control" th:field="*{cep}"/>
+					</div>		
+				</div>
+				
+				<div class="row">	
+					<div class="col-sm-5  form-group">
+						<label for="logradouro">Logradouro</label>
+						<input id="logradouro" type="text" class="form-control" th:field="*{logradouro}"/>
+					</div>
+					<div class="col-sm-2  form-group">
+						<label for="numero">Número</label>
+						<input id="numero" type="text" class="form-control" th:field="*{numero}"/>
+					</div>
+					<div class="col-sm-5 form-group">
+						<label for="complemento">Complemento</label>
+						<input id="complemento" type="text" class="form-control" th:field="*{complemento}"/>
+					</div>
+				</div>		
+				
+				<div class="row">	
+					<div class="col-sm-4  form-group">
+						<label for="referencia">Referência</label>
+						<input id="referencia" type="text" class="form-control" th:field="*{referencia}"/>
+					</div>
+					<div class="col-sm-3  form-group">
+						<label for="bairro">Bairro</label>
+						<input id="bairro" type="text" class="form-control" th:field="*{bairro}"/>
+					</div>
+					<div class="col-sm-3  form-group">
+						<label for="cidade">Cidade</label>
+						<input id="cidade" type="text" class="form-control" th:field="*{cidade}"/>
+					</div>
+					<div class="col-sm-2  form-group">
+						<label for="uf">UF</label>
+						<input id="uf" type="text" class="form-control" th:field="*{uf}"/>
+					</div>
+				</div>
+			</div>
+			
+			<div class="my-4">
+				<div class="row">	
+					<div class="col-sm-4 form-group">
+						<label for="telefone1">Telefone 1</label>
+						<input id="telefone1" type="text" class="form-control" th:field="*{telefone1}"/>
+					</div>
+					<div class="col-sm-4  form-group">
+						<label for="telefone2">Telefone 2</label>
+						<input id="telefone2" type="text" class="form-control" th:field="*{telefone2}"/>
+					</div>
+						<div class="col-sm-4  form-group">
+						<label for="telefone3">Telefone 3</label>
+						<input id="telefone3" type="text" class="form-control" th:field="*{telefone3}"/>
+					</div>
+				</div>
+				
+				<div class="row">	
+					<div class="col-sm-3 form-group">
+						<label for="site">Website</label>
+						<input id="site" type="text" class="form-control" th:field="*{site}"/>
+					</div>
+					<div class="col-sm-3  form-group">
+						<label for="email">E-mail</label>
+						<input id="email" type="email" class="form-control" th:field="*{email}"/>
+					</div>
+					<div class="col-sm-3  form-group">
+						<label for="facebook">Facebook</label>
+						<input id="facebook" type="text" class="form-control" th:field="*{facebook}"/>
+					</div>
+					<div class="col-sm-3  form-group">
+						<label for="linkedin">Linkedin</label>
+						<input id="linkedin" type="text" class="form-control" th:field="*{linkedin}"/>
+					</div>
+				</div>
+			</div>
+						
+			<div class="row"></div>
+	
+			<div class="form-group">
+				<button class="btn  btn-primary" type="submit">Salvar</button>
+			</div>
+	
+		</form>
+	</div>
+	
+	<!-- <div th:replace="estilo/CadastroRapidoEstilo :: modal"></div> -->
+	
+</section>
+	
+</body>
+</html>
